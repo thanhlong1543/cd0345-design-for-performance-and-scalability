@@ -1,7 +1,7 @@
 # TODO: Designate a cloud provider, region, and credentials
 provider "aws" {
-  access_key = "x"
-  secret_key = "x"
+  access_key = "AKIA352XY4J74NOEPQ7T"
+  secret_key = "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"
   region = "us-east-1"
 }
 
@@ -13,17 +13,5 @@ resource "aws_instance" "udacityt2" {
   subnet_id = "subnet-072d417904d8e0633"
   tags = {
     name = "Udacity T2"
-  }
-}
-
-# TODO: provision 2 m4.large EC2 instances named Udacity M4
-
-resource "aws_instance" "udacitym4" {
-  ami = "ami-0742b4e673072066f"
-  instance_type = "m4.large"
-  count = 2
-  subnet_id = "subnet-072d417904d8e0633"
-  tags = {
-    name = "Udacity M4"
   }
 }
