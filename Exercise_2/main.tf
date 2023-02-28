@@ -6,7 +6,7 @@ provider "aws" {
 
 resource "aws_iam_role" "lambda_role" {
   name               = "Lambda Function Role"
-  assume_role_policy = {
+  assume_role_policy = jsonencode({
     "Version" : "2012-10-17",
     "Statement" : [
       {
@@ -18,15 +18,14 @@ resource "aws_iam_role" "lambda_role" {
         "Sid" : ""
       }
     ]
-  }
-
+  })
 }
 
 resource "aws_iam_policy" "lambda_iam_policy" {
   name        = "lambda_iam_policy"
   path        = "/"
   description = "AWS IAM Policy for aws lambda"
-  policy      = {
+  policy      = jsonencode({
     "Version" : "2012-10-17",
     "Statement" : [
       {
@@ -39,7 +38,7 @@ resource "aws_iam_policy" "lambda_iam_policy" {
         "Effect" : "Allow"
       }
     ]
-  }
+  })
 }
 
 resource "aws_iam_role_policy_attachment" "attach_iam_policy_to_iam_role" {
