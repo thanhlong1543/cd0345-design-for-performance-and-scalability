@@ -12,6 +12,8 @@ resource "aws_instance" "udacityt2" {
   count = 4
   subnet_id = "subnet-072d417904d8e0633"
   tags = {
-    name = "Udacity T2"
+    Name = "Udacity T2"
   }
 }
+
+# TODO: provision 2 m4.large EC2 instances named Udacity M4
